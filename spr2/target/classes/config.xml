@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+	<bean id="person" class ="learn.spring.spr2.Person">
+		<property name ="name" value ="deep"/>
+		<property name="contacts">
+			<set>
+				<value>+91 987655544</value>
+				<value>+91 9087654544</value>
+			</set>
+		</property>
+		
+		<property name="bikes">
+			<list>
+				<value>Apache</value>
+				<value>Rx100</value>
+				<value>passion</value>	
+			</list>
+		</property>
+		
+		<property name="siblings">
+			<map>
+				<entry key="1" value="Rajat"/>
+				<entry key="2" value="Sumi"/>
+				<entry key="3" value="Ele"/>
+			</map>
+		</property>
+	</bean>
+</beans>
