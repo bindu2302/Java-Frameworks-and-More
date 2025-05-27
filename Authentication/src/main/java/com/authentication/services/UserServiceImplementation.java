@@ -15,4 +15,16 @@ public class UserServiceImplementation implements UserService{
 	public void signUp(Users user) {
 		repo.save(user);
 	}
+	
+	public boolean usernameExist(String username) {
+		Users user = repo.findByUsername(username);
+		if (user != null)
+			return true;
+		else
+			return false;
+	}
+	
+	public Users getUser(String username) {
+		return repo.findByUsername(username);
+	}
 }

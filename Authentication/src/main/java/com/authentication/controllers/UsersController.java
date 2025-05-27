@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.authentication.entities.UserLoginData;
 import com.authentication.entities.Users;
 import com.authentication.services.UserService;
 
@@ -28,8 +29,24 @@ public class UsersController {
 	
 	@PostMapping("/signUp")
 	public String signUp(@ModelAttribute Users user) {
-		service.signUp(user);
+		String username = user.getUsername();
+		boolean usernameExist = service.usernameExist(username);
+		if(usernameExist == false) 
+			service.signUp(user);
+		else
+			System.out.println("User already exist!");
 		return "index";
+	}
+	
+	@PostMapping("/signIn")
+	public String signIn(@ModelAttribute UserLoginData data) {
+		
+		Users dbUser = service.getUser(data.getUsername());
+		if(dbUser != null) {
+			if(data.getPassword().equals(dbUser.getPassword()))
+				return "success";
+		}
+		return "fail";
 	}
 	
 }
