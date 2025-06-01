@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-	<h3>Sign up below:</h3>
-	<form action="signUp" method="post">
-	<label for="username"> Username</label>
-	<input type="text" name="username">
-	<br><br>
-	<label for="email">Email</label>
-	<input type="text" name="email">
-	<br><br>
-	<label for="password"> Password</label>
-	<input type="password" name="password">
-	<br><br>
-	<label for="gender">Gender: </label>
-	<label>Male</label>
-	<input type="radio" name="gender" value="M">
-	<label>Female</label>
-	<input type="radio" name="gender" value="F">
-	<label>Other</label>
-	<input type="radio" name="gender" value="O">
-	<br><br>
-	<label for="address">Address</label>
-	<textarea name="address"></textarea>
-	<br><br>
-	<input type="submit" value="SIGN UP">
-	</form>
+    <div class="page-container">
+        <div class="content-box">
+            <h1>Sign Up</h1>
+            <form action="signUp" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username">
+                </div>
+                <div th:if="${msg}" class="error-message">
+                    <p th:text="${msg}"></p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="form-group radio-group">
+                    <label>Gender: </label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="gender" value="M"> Male</label>
+                        <label><input type="radio" name="gender" value="F"> Female</label>
+                        <label><input type="radio" name="gender" value="O"> Other</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea name="address"></textarea>
+                </div>
+                <input type="submit" value="SIGN UP">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
