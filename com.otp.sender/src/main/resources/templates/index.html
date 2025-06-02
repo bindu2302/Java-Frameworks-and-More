@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Mail sender</title>
-</head>
-<body>
-	<h3>Compose Mail</h3>
-	<form action="send" method="post">
-		<label>To: </label>
-		<input type="email" name="receiver">
-		<br><br>
-		<label>Subject: </label>
-		<input type="text" name="subject">
-		<br><br>
-		<label>Body: </label>
-		<textarea name="body"></textarea>
-		<br><br>
-		<input type="submit" value="Send Mail">
-	</form>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Mail sender</title>
+	</head>
+	<body>
+		<h3>OTP Verification</h3>
+		<form action="send" method = "post">
+			<label>Enter email: </label>
+			<input type = "email" name = "receiver">
+			<br><br>
+			<input type = "submit" value = "Generate OTP">
+		</form>
+	</body>
 </html>

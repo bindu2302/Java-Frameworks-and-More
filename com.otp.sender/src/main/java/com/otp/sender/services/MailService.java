@@ -1,5 +1,7 @@
 package com.otp.sender.services;
 
-public interface MailService {
+import com.otp.sender.entity.Mail;
 
+public interface MailService {
+	void sendMail(Mail mail);
 }

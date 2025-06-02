@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+//lombok
+
 @Entity
 public class Mail {
 	@Id
@@ -52,5 +54,6 @@ public class Mail {
 	public String toString() {
 		return "Mail [id=" + id + ", receiver=" + receiver + ", subject=" + subject + ", body=" + body + "]";
 	}
+	
 	
 }
